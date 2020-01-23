@@ -1,0 +1,80 @@
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-krpww[0m
+{"level":"warn","ts":1579810873.736675,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579810873.737432,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-cz8zm[0m
+{"level":"warn","ts":1579810874.4501438,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1579810874.451503,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-jr2-seercream-master-9hwk9[0m
+{"level":"warn","ts":1579810883.56918,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1579810884.6765382,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/jr2-seercream.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/jr2-seercream main.go
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/jr2-seercream"]                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+ERROR: logging before flag.Parse: E0123 20:21:33.816611      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0123 20:21:33.821470      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2020/01/23 20:21:37 pushed blob: sha256:d17146fd4b8eaa5c17954e09327ec7d5118892e84c8232c000a558ec52f40980
+2020/01/23 20:21:37 pushed blob: sha256:2686f987879f2df7a68ba835311969fe025caaa4c8340fb413c8beebb2360551
+2020/01/23 20:21:39 gcr.io/**-development/jr2-seercream:0.0.1: digest: sha256:6e8eec93ea17bbb462f96308c822280f78b9819bdaf8eaaa3a4a828aade54ac8 size: 428
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/jr2-seercream to an unshallow repository
+Generating change log from git ref 6b0f7435d6a7bced55564795f968f943ebf8086e => 1257c5aa56578eff551a8fa35f3b32969530b2a0
+Associating user x-0 in users.jenkins.io with email rawlingsj80@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 390e13891f2b2f873ac31e6efa8dc68bbb09221e with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/jr2-seercream and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/jr2-seercream/releases/tag/v0.0.1
+generated: /workspace/source/charts/jr2-seercream/templates/release.yaml
+Created Release jr2-seercream-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-jr2-seercream-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-jr2-seercream-master-1 with release notes URL: https://github.com/cb-kubecd/jr2-seercream/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file jr2-seercream-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-jr2-seercream-master-qgkkk-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app jr2-seercream version 0.0.1 to namespace **-staging
+error: pulling environment repo https://github.com/cb-kubecd/environment-seercream-staging.git into /builder/home/.**/environments: getting repository cb-kubecd/environment-seercream-staging: failed to get repository cb-kubecd/environment-seercream-staging due to: GET https://api.github.com/repos/cb-kubecd/environment-seercream-staging: 404 Not Found []
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
